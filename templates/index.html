@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Income Prediction</title>
+</head>
+<body>
+    <h2>Predict Income Level</h2>
+
+    <form action="/predict" method="post">
+
+        <label>Education Number:</label>
+        <input type="number" name="education-num" required><br><br>
+
+        <label>Hours per Week:</label>
+        <input type="number" name="hours-per-week" required><br><br>
+
+        <label>Age:</label>
+        <input type="number" name="age" required><br><br>
+
+        <label>Occupation:</label>
+        <select name="occupation" required>
+            <option value="Exec-managerial">Exec-managerial</option>
+            <option value="Prof-specialty">Prof-specialty</option>
+            <option value="Craft-repair">Craft-repair</option>
+            <option value="Sales">Sales</option>
+            <option value="Adm-clerical">Adm-clerical</option>
+            <option value="Other-service">Other-service</option>
+            <option value="Machine-op-inspct">Machine-op-inspct</option>
+            <option value="Transport-moving">Transport-moving</option>
+            <option value="Handlers-cleaners">Handlers-cleaners</option>
+            <option value="Farming-fishing">Farming-fishing</option>
+            <option value="Tech-support">Tech-support</option>
+            <option value="Protective-serv">Protective-serv</option>
+            <option value="Priv-house-serv">Priv-house-serv</option>
+        </select><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+        <h3>Prediction: {{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
